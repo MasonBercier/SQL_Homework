@@ -59,12 +59,12 @@ AND store_id = 1;
 -- 9. How many payment amounts (4.99, 5.99, etc.) had a number of rentals above 250 for customers
 -- with ids between 380 and 430? (use group by and having > 250)\
 -- This code operates fine until I add in the last line about customer id. At that point I get 0 results
-SELECT amount, COUNT(payment_id) AS payment_id_count, COUNT(customer_id) AS customer_id_count
+SELECT amount, COUNT(amount)
 FROM payment
-GROUP BY amount, customer_id
-HAVING COUNT(payment_id) > 250
--- AND customer_id BETWEEN 380 AND 430;
-
+WHERE customer_id BETWEEN 380 AND 430
+GROUP BY amount
+HAVING COUNT(payment_id) > 250;
+-- Answer = 3 amounts: 2.99, 6.99, 4.99
 
 
 -- 10. Within the film table, how many rating categories are there? And what rating has the most
