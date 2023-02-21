@@ -21,7 +21,7 @@ ORDER BY COUNT DESC;
 
 
 -- 4. How many customers have the last name ‘William’?
--- (couldn't find table including William as last name, the table name would go next to from)
+-- (couldn't find table including William as last name
 SELECT COUNT(last_name)
 FROM customer
 WHERE last_name = 'William';
@@ -38,7 +38,7 @@ GROUP BY staff_id;
 -- 6. How many different distinct names are there?
 SELECT COUNT(DISTINCT name)
 FROM category;
--- Answer 591
+-- Answer 16
 
 
 -- 7. What film has the most actors in it? (use film_actor table and get film_id)
